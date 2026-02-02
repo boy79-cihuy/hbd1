@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Untuk Kamu 🤍</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+  <!-- AUDIO -->
+  <audio id="bomsound" src="bom.mp3" preload="auto"></audio>
+  <audio id="gmusic" src="page 3.mp3" preload="auto"></audio>
+  <audio id="page1" src="page1.mp3" preload="auto"></audio>
+  <audio id="hbd" src="hbd.mp3" preload="auto"></audio>
+  <audio id="lagu" preload="auto">
+    <source src="cantik.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- STEP 0 -->
+  <div class="container" id="step0">
+    <h2 class="quiz-title">🎁 Tebak tebak berhadiah!</h2>
+    <p class="quiz-question">Ada Kue ada Lilin berarti ada yang??</p>
+
+    <!-- STEP  <input
+    type="text"
+    id="answer"
+    class="quiz-input"
+    placeholder="Jawaban kamu..."
+  /> <br> -->
+
+    <button class="quiz-button" onclick="window.location.href='https://www.instagram.com/reels/DRuRZ4OCjg5/'">
+      Ulang Tahun
+    </button>
+
+    <p id="result"></p>
+
+    <img id="img-correct" src="https://media.tenor.com/W9YoZ1h0sVgAAAAC/zh.gif" class="img hidden">
+    <img id="img-wrong" src="https://media.tenor.com/JHG8_5ZObrAAAAAC/nailong-yellow-dragon.gif" class="img hidden">
+
+    <button class="mail-btn" onclick="openMail(this)">
+      <span class="btn-text">ULTAH</span>
+      <img src="bom.png" class="btn-img" alt="mail">
+    </button>
+
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="container hidden" id="step1">
+  <h1 >
+    Happy Birthday 💖
+  </h1>
+  <p>Klik berurutan yaa ya 😆</p>
+
+  <div class="box-wrapper">
+
+    <div class="box">
+      <div class="box-content">
+        <h3>Box 1</h3>
+        <img src="1.png" class="img">
+        <p>Berani buka nggak?</p>
+        <button class="yes-btn" onclick="goToStep(2)">Click Here</button>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-content">
+        <h3>Box 2</h3>
+        <img src="2.png" class="img">
+        <p>Lagunya bikin keinget seseorang</p>
+        <button class="yes-btn" onclick="goToStep(3)">Click Here</button>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-content">
+        <h3>Box 3</h3>
+        <img src="3.png" class="img">
+        <p>Kalah = ulang lagi 😜</p>
+        <button class="yes-btn" onclick="goToStep(4); startMemoryGame();">Click Here</button>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-content">
+        <h3>Box 4</h3>
+        <img src="4.png" class="img">
+        <p>Mail</p>
+        <button class="yes-btn" onclick="goToStep(5); startMemoryGame();">Click Here</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+  <!-- STEP 2 -->
+  <div class="container hidden" id="step2">
+
+    <!-- CARD 1 -->
+    <div class="photo-card">
+      <div class="photo-wrapper">
+        <h3>Hai Cakep 💖</h3>
+        <img src="lop.jpeg" class="fade delay2 img">
+      </div>
+
+      <div class="card-content">
+        <p class="date">06-09-2022</p>
+        <p class="caption">
+          Saat pertama kita jadian <br>
+          itu jujur ga nyangka banget, padahal aku kira kamu suka wibu cebol jelek itu <br>
+          eh ternyata perasaan kita sama sama satu eheeh
+        </p>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="photo-card">
+      <div class="photo-wrapper">
+        <h3>Hai Cakep 💖</h3>
+        <img src="kue.jpeg" class="fade delay3 img">
+      </div>
+
+      <div class="card-content">
+        <p class="date">10-12-2022</p>
+        <p class="caption">
+          waktu merayakan ultahmu <br>
+          sumpa disana happy banget bisa ngerayain ultahmu <br>
+          kita timezonean, beli roti o, cetakan foto juga masi tersimpan
+        </p>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="photo-card">
+      <div class="photo-wrapper">
+        <h3>Hai Cakep 💖</h3>
+        <video src="vp1.mp4" class="video fade delay4" autoplay muted playsinline loop></video>
+      </div>
+
+      <div class="card-content">
+        <p class="date">10-12-2022</p>
+        <p class="caption">
+          waktu merayakan ultahmu <br>
+          sumpa disana happy banget bisa ngerayain ultahmu <br>
+          kita timezonean, beli roti o, cetakan foto juga masi tersimpan
+        </p>
+      </div>
+    </div>
+
+    <!-- BUTTON -->
+    <div class="button-wrapper">
+      <button class="yes-btn fade delay5" onclick="goToStep(1)">Back</button>
+    </div>
+
+  </div>
+
+
+
+
+  <!-- STEP 3 -->
+  <div class="container hidden" id="step3">
+    <h2>🎶 Lagu Buat Kamu</h2>
+
+    <div class="music-card">
+      <img src="kahitna.jpeg" class="music-cover">
+
+      <div class="music-info">
+        <h3>Cantik&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h3>
+        <p>Kahitna</p>
+
+        <div class="progress-container">
+          <div class="progress"></div>
+        </div>
+
+        <div class="music-controls">
+          <button class="playBtn">▶️</button>
+        </div>
+      </div>
+
+      <audio src="cantik.mp3"></audio>
+    </div>
+
+    <br>
+
+    <div class="music-card">
+      <img src="ilopyu.jpeg" class="music-cover">
+
+      <div class="music-info">
+        <h3>i Love You So </h3>
+        <p>The Walters</p>
+
+        <div class="progress-container">
+          <div class="progress"></div>
+        </div>
+
+        <div class="music-controls">
+          <button class="playBtn">▶️</button>
+        </div>
+      </div>
+
+      <audio src="page1.mp3"></audio>
+    </div>
+
+    <button class="yes-btn" onclick="goToStep(1)">Back</button>
+  </div>
+
+
+  <!-- STEP 4 -->
+  <!-- STEP MEMORY -->
+  <div class="container hidden" id="step4">
+    <h2>🧠 Memory Challenge</h2>
+    <p>Sisa kesempatan salah: <span id="chance">10</span></p>
+
+    <div class="memory-grid" id="memoryGrid"></div>
+
+    <!-- MENANG -->
+    <img id="winImg" src="https://media.tenor.com/W9YoZ1h0sVgAAAAC/zh.gif" class="img hidden">
+    <p class="hidden">
+      Selamat kamu menang abis ini, ingat traktir aku yaaa😜
+    </p>
+
+    <button class="yes-btn hidden" id="nextBtn" onclick="goToStep(1)">
+      back
+    </button>
+  </div>
+
+
+  <!-- STEP 5 -->
+  <div class="container hidden" id="step5">
+    <div class="kartu ">
+      <h1>Happy Birthday🤍</h1>
+
+      <p>Kata orang ulang tahun itu spesial.<br> Buat gue? Iya.<br>
+      Soalnya ada satu hal yang selalu keulang tiap tahun:<br> 
+      gue makin yakin,<br> tiap lihat senyum lo,<br> hari gue langsung jadi lebih niat.</p>
+      <p>Ulang tahun katanya cuma setahun sekali.<br> Tapi perhatian gue nggak kenal kalender.<br> Doa baik buat lo tuh
+        rutinitas harian,<br> bukan event tahunan.</p>
+      <p>Gue nggak janji jadi yang paling sempurna,<br> tapi gue janji:<br> kalau lo capek sama dunia,<br> gue siap jadi
+        tempat lo berhenti sebentar,<br> tanpa ceramah,<br> tanpa sok kuat,<br> cukup nemenin sambil bilang,<br> “Udah
+        ya… sekarang istirahat.”</p>
+      <p>Selamat ulang tahun.<br> Dari gue yang mungkin nyebelin,<br> sedikit tengil,<br> tapi tulus kalau soal lo. 🎂❤️
+      </p>
+
+      <div class="signature">
+        — Alboy
+      </div>
+    </div>
+    <button class="yes-btn" onclick="goToStep(1)">back</button>
+  </div>
+
+
+
+  <script src="kode.js"></script>
+  <footer class="footer">
+    © 2026 Alboy Cihuyy
+  </footer>
+</body>
+
+</html>
