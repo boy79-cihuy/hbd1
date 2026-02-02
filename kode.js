@@ -32,6 +32,7 @@ function goToStep(step) {
     .classList.remove("hidden");
       
     if (step === 4) {
+    gmusic.loop = true;   // 🔁 REPEAT
     gmusic.currentTime = 0;
     gmusic.play().catch(() => {});
   } else {
@@ -39,18 +40,21 @@ function goToStep(step) {
   }
 
     if (step === 1) {
+    lagu.loop = true;   // 🔁 REPEAT
     lagu.currentTime = 0;
     lagu.play().catch(() => {});
   } else {
     lagu.pause();
   }
     if (step === 2) {
+    page1.loop = true;   // 🔁 REPEAT
     page1.currentTime = 0;
     page1.play().catch(() => {});
   } else {
     page1.pause();
   }
     if (step === 5) {
+    hbd.loop = true;   // 🔁 REPEAT
     hbd.currentTime = 0;
     hbd.play().catch(() => {});
   } else {
@@ -203,4 +207,5 @@ function handleCard(card) {
     }
   }
 }
+
 
