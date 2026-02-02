@@ -25,6 +25,7 @@ function checkAnswer() {
 }
 
 function goToStep(step) {
+  pauseAllAudio(); // 🔥 INI SAJA TAMBAHANNYA
   document.querySelectorAll(".container")
     .forEach(el => el.classList.add("hidden"));
 
@@ -32,7 +33,6 @@ function goToStep(step) {
     .classList.remove("hidden");
       
     if (step === 4) {
-    gmusic.loop = true;   // 🔁 REPEAT
     gmusic.currentTime = 0;
     gmusic.play().catch(() => {});
   } else {
@@ -47,14 +47,12 @@ function goToStep(step) {
     lagu.pause();
   }
     if (step === 2) {
-    page1.loop = true;   // 🔁 REPEAT
     page1.currentTime = 0;
     page1.play().catch(() => {});
   } else {
     page1.pause();
   }
     if (step === 5) {
-    hbd.loop = true;   // 🔁 REPEAT
     hbd.currentTime = 0;
     hbd.play().catch(() => {});
   } else {
@@ -68,6 +66,21 @@ function goToStep(step) {
     });
 }
 
+function pauseAllAudio() {
+  // pause semua audio step
+  if (typeof lagu !== "undefined") lagu.pause();
+  if (typeof page1 !== "undefined") page1.pause();
+  if (typeof gmusic !== "undefined") gmusic.pause();
+  if (typeof hbd !== "undefined") hbd.pause();
+
+  // pause audio music-card
+  if (currentAudio) {
+    currentAudio.pause();
+    if (currentBtn) currentBtn.textContent = "▶️";
+    currentAudio = null;
+    currentBtn = null;
+  }
+}
 
 
 let currentAudio = null;
@@ -117,7 +130,6 @@ document.querySelectorAll(".music-card").forEach(card => {
 
 
 
-
 function openMail(btn) {
   // ubah button jadi gambar
   btn.classList.add("opened");
@@ -141,6 +153,8 @@ let chances = 10;
 const grid = document.getElementById("memoryGrid");
 const chanceEl = document.getElementById("chance");
 const winImg = document.getElementById("winImg");
+const wintext1 = document.getElementById("winText");
+const wintext2 = document.getElementById("winText");
 const nextBtn = document.getElementById("nextBtn");
 
 function shuffle(array) {
@@ -153,6 +167,8 @@ function startMemoryGame() {
   chances = 10;
   chanceEl.textContent = chances;
   winImg.classList.add("hidden");
+  winText1.classList.add("hidden");
+  winText2.classList.add("hidden");
   nextBtn.classList.add("hidden");
 
   shuffle(cards).forEach(symbol => {
@@ -185,7 +201,8 @@ function handleCard(card) {
       if (matched === 2) {
         winImg.classList.remove("hidden"); // 🎉 MENANG
         nextBtn.classList.remove("hidden");
-        Wintext.classList.remove("hidden");
+        winText1.classList.remove("hidden");
+        winText2.classList.remove("hidden");
       }
     } else {
       chances--;
@@ -207,5 +224,4 @@ function handleCard(card) {
     }
   }
 }
-
 
